@@ -10,28 +10,58 @@
 
 <body>
 
-    <!--inicio do Header-->
-
+  
     <header>
         <section>
-             <!--Logo do Header e links de navegação-->
-            <div class=" menu">
+            <!--Logo do Header e links de navegação-->
+            <div class="menu">
                 <div class="nav">
-                    <div class="logo"><img src="imagens/logo miles.png" alt="Logo do Site"></div>
+                    <a href="index.html" class="logo">
+                        <img src="imagens/MILES LOGO.png" alt="Logo do Site">
+                    </a>
                     <ul>
                         <li><a href="index.html">Home</a></li>
-                        <li><a  href="historia.html">History</a></li>
-                        <li><a  href="blog.html">Blog</a></li>
+                        <li><a href="historia.html">History</a></li>
+                        <li><a href="blog.html">Blog</a></li>
                         <li><a class="active" href="contato.html">Contact</a></li>
                     </ul>
 
-                     <!--Botão de Login-->
-                    <div>
-                        <button class="sign"><img src="imagens/login.png" alt="Imagem de Login"></button>
+
+                    <!--Botão de Login-->
+                    <div class="button-container">
+                        <div>
+                            <button class="sign" onclick="toggleMusic()">
+                                <img src="imagens/MILES LOGIN.png" alt="Imagem de Login">
+                            </button>
+                            <p class="login-text">Login</p>
+                        </div>
+                        <div>
+                            <button class="sign" onclick="toggleMusic()">
+                                <img src="imagens/FONE MILES PNG.png" alt="Imagem de Música">
+                            </button>
+                            <p class="login-text">Music</p>
+                        </div>
                     </div>
-                </div>
-            </div>
-        </section>
+                    
+                    <!-- Adicionando o elemento de áudio -->
+                    <audio id="music">
+                        <source src="musica.mp3" type="audio/mpeg">
+                        Seu navegador não suporta o elemento de áudio.
+                    </audio>
+                    
+                    <!-- JavaScript para controlar o play/pause -->
+                    <script>
+                        var music = document.getElementById('music');
+                        music.volume = 0.3; // Define o volume para 30% (0.0 a 1.0)
+                    
+                        function toggleMusic() {
+                            if (music.paused) {
+                                music.play(); // Se a música está pausada, toca
+                            } else {
+                                music.pause(); // Se a música está tocando, pausa
+                            }
+                        }
+                    </script>
 
     </header>
 
@@ -45,8 +75,19 @@
 
     <!--inicio do rodapé-->
     <footer>
+        <div class="button-container">
+            <div class="button">
+                <button class="button-with-image">
+                    <img class="login" src="imagens/linkedin png.png" alt="Imagem" class="button-image">
+                </button>
+            </div>
     
-    </footer>
+            <div class="button">
+                <button class="button-with-image">
+                    <img class="login" src="imagens/github png.png" alt="Imagem" class="button-image">
+                </button>
+            </div>
+        </div>
 
     <!--final do rodapé-->
 </body>

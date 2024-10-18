@@ -7,13 +7,18 @@
 
 body {
     font-size: 100%;
+    display: flex;
+    flex-direction: column; /* Permite que o conteúdo do corpo se empilhe verticalmente */
+    min-height: 100vh; /* Garante que o corpo ocupe pelo menos a altura total da viewport */
+    margin: 0; /* Remove a margem padrão do corpo */
+    background: linear-gradient(to bottom, #fc367b 0%, #f44c7b 50%, #d11053 100%); /* Gradiente aplicado */
 }
 
 /*----------------------------------------------------------------*/
 
 /*Inicio do header*/
 
-/*alinha o header ao centro do site*/
+/* Alinha o header ao centro do site */
 .nav {
     width: 100%;
     display: flex;
@@ -21,53 +26,173 @@ body {
     align-items: center;
     padding: 30px 0;
 }
-/*Muda o tamanho da logo do header*/
+
+/* Muda o tamanho da logo do header */
 .nav .logo img {
     width: 90px;
     margin-left: 15px;
+    transition: transform 0.3s ease; /* Adiciona uma transição suave para transformações */
 }
-/*organiza os links de navegação*/
-.nav ul{
+
+/* Animação ao passar o mouse sobre a logo */
+.nav .logo img:hover {
+    transform: scale(1.1) translateY(-5px); /* Aumenta e move a logo ligeiramente para cima */
+}
+
+/* Organiza os links de navegação */
+.nav ul {
     display: flex;
     list-style: none;
 }
 
-.nav ul li{
-margin-right: 30px;
+.nav ul li {
+    margin-right: 30px;
+    transition: transform 0.3s ease; /* Adiciona transição ao item de lista */
+    position: relative; /* Necessário para o posicionamento do traçado */
 }
-/*cor tamanho e fonte dos links de navegação*/
-.nav ul li a{
+
+/* Cor, tamanho e fonte dos links de navegação */
+.nav ul li a {
     font-weight: 500;
-    color: rgb(122, 30, 30);
+    color: white; /* Mudando a cor do texto para branco */
     font-family: sans-serif;
     font-size: 30px;
-
+    text-decoration: none;
+    display: inline-block;
+    transition: color 0.3s ease, transform 0.3s ease; /* Adicionando transform na transição */
 }
-/*Animação do traçado da pagina ativa nos links de navefação*/
-.nav ul .active::after{
+
+/* Animação para links de navegação ao passar o mouse */
+.nav ul li:hover {
+    transform: scale(1.1); /* Aumenta o item da lista, afetando o layout da barra */
+}
+
+/* Animação para cor do link ao passar o mouse */
+.nav ul li:hover a {
+    transform: scale(1.0); /* Aumenta o tamanho sem blur */
+    color: #ffcccb; /* Cor rosa bem claro ao passar o mouse */
+}
+
+/* Animação do traçado da página ativa nos links de navegação */
+.nav ul .active::after {
     content: '';
     width: 50%;
-    height: 3px;
-    background-color: rgb(122, 30, 30);
-    display: flex;
-    position: relative;
-    margin-left: 10px;
+    height: 3px; /* Aumentar a altura para um traço mais "gorducho" */
+    background-color: #ffcccb; /* Cor rosa bem claro para o traço */
+    display: block; /* Garantir que o traçado seja exibido */
+    position: absolute; /* Controla a posição do traçado */
+    bottom: -5px; /* Ajuste a posição vertical do traçado */
+    left: 0; /* Começa do lado esquerdo do link */
+    border-radius: 10px; /* Bordas arredondadas para o traçado */
+    animation: move 4s infinite alternate; /* Diminui a velocidade para 4 segundos */
 }
-/*estilização do Botao de Login*/
-.sign{
-    margin-top: -15px;
+
+/* Animação de movimento do traçado */
+@keyframes move {
+    0% {
+        left: 0; /* Posição inicial */
+    }
+    100% {
+        left: 50%; /* Move para a direita do link */
+    }
+}
+
+/* Estilização do botão de Login */
+.button-container {
+    display: flex; /* Usa flexbox para alinhar os botões lado a lado */
+    justify-content: center; /* Centraliza os botões horizontalmente */
+    align-items: center; /* Alinha verticalmente os botões */
+    margin-top: 20px; /* Espaço acima do contêiner de botões */
+}
+
+.button-container div {
+    margin: 0 10px; /* Margem lateral para espaçamento entre os botões */
+}
+
+.sign {
+    margin-top: -15px; /* Ajuste se necessário */
+    border-radius: 100%; /* Botão arredondado */
+    background-color: transparent; /* Remover cor de fundo */
+    cursor: pointer; /* Muda o cursor ao passar por cima */
+    border: none; /* Remove borda padrão */
+    transition: transform 0.3s ease; /* Transição suave */
+    display: flex; /* Usar flexbox para centralizar a imagem no botão */
+    justify-content: center; /* Centraliza a imagem horizontalmente */
+    align-items: center; /* Centraliza a imagem verticalmente */
+    width: 75px; /* Largura do botão */
+    height: 75px; /* Altura do botão */
+}
+
+.sign img {
+    margin-bottom: -3px; /* Ajuste para alinhar a imagem corretamente */
+    width: 91px; /* Largura da imagem */
+    height: 91px; /* Altura da imagem */
     margin-right: 15px;
-    border-radius: 100%;
-    background-color: rgb(122, 30, 30);
-    cursor: pointer;
-    border: none;
 }
-/*Estilização da Imagem do botão de login*/
-.sign img{
-    width: 60px;
-    filter: invert(1) brightness(2);
-    padding: 10px;
+
+.login-text {
+    color: white; /* Cor do texto dos botões */
+    text-align: center; /* Centraliza o texto em relação ao botão */
+    margin-top: 5px; /* Espaço entre o botão e o texto */
+    font-family: sans-serif; /* Fonte do texto */
+    font-size: 14px; /* Tamanho da fonte */
+    margin-right: 15px;
 }
+
+/* Animação ao passar o mouse sobre o botão de login */
+.sign:hover {
+    transform: scale(1.1) translateY(-5px); /* Aumenta e move o botão ligeiramente para cima */
+    /* Remover a alteração de cor ao passar o mouse */
+}
+
 /*Finaliza o Header*/
 
 /*----------------------------------------------------------------*/
+
+/* Estilização do footer */
+footer {
+    display: flex;
+    justify-content: center; /* Centraliza o conteúdo do footer */
+    align-items: center; /* Alinha verticalmente */
+    position: relative; /* Permite que o footer seja posicionado no final da página */
+    bottom: 0; /* Coloca o footer na parte inferior */
+    width: 100%; /* Ocupa toda a largura da página */
+    margin-top: auto; /* Coloca o footer na parte inferior */
+    padding: 20px 0; /* Espaçamento acima e abaixo do footer */
+    background-color: transparent; /* Tornar o fundo transparente para mostrar o gradiente */
+    color: white; /* Cor do texto e elementos do footer */
+}
+
+/* Centraliza os botões no footer */
+.button-container {
+    display: flex;
+    justify-content: center; /* Centraliza os botões no footer */
+    align-items: center; /* Alinha verticalmente os botões */
+}
+
+/* Estilização do botão do footer */
+.button-with-image {
+    display: flex;
+    align-items: center;
+    justify-content: center; /* Centraliza o conteúdo do botão */
+    padding: 10px;
+    background-color: white; /* Cor de fundo branca */
+    border: 2px solid #d11053; /* Borda rosa */
+    border-radius: 50%; /* Borda arredondada */
+    cursor: pointer;
+    color: #d11053; /* Símbolos em rosa */
+    transition: transform 0.3s ease, background-color 0.3s ease; /* Transição suave */
+    margin: 0 10px; /* Espaçamento entre os botões */
+}
+
+/* Estilização das imagens dentro do botão */
+.button-with-image .login {
+    width: 50px; /* Largura da imagem */
+    filter: brightness(0) saturate(100%) invert(21%) sepia(67%) saturate(4792%) hue-rotate(324deg) brightness(93%) contrast(101%); /* Rosa no símbolo */
+}
+
+/* Animação ao passar o mouse sobre o botão */
+.button-with-image:hover {
+    transform: scale(1.1) translateY(-5px); /* Aumenta e move o botão ligeiramente para cima */
+    background-color: #ffd1e1; /* Rosa claro ao passar o mouse */
+}
