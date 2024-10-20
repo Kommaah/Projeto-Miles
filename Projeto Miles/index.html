@@ -29,7 +29,7 @@
 
 
                     <!--Botão de Login-->
-                    <div class="button-container">
+                    <div class="button-container-top">
                         <div>
                             <button class="sign" onclick="toggleMusic()">
                                 <img src="imagens/MILES LOGIN.png" alt="Imagem de Login">
@@ -76,21 +76,32 @@
 
     <!--inicio do rodapé-->
     <footer>
+        <div id="additional-buttons" style="display: none;">
+            <button class="button-with-image" id="box-one"> 
+                <img class="login" src="imagens/linkedin png.png" alt="Perfil 1" class="button-image">
+            </button>
+            <button class="button-with-image" id="box-two">
+                <img class="login" src="imagens/linkedin png.png" alt="Perfil 2" class="button-image">
+            </button>
+            <button class="button-with-image" id="box-three">
+                <img class="login" src="imagens/linkedin png.png" alt="Perfil 3" class="button-image">
+            </button>
+        </div>
         <div class="button-container">
             <div class="button">
-                <button class="button-with-image">
-                    <img class="login" src="imagens/linkedin png.png" alt="Imagem" class="button-image">
+                <button id="expand-button" class="button-with-image">
+                    <img class="login" src="imagens/linkedin png.png" alt="Linkedin" class="button-image">
                 </button>
             </div>
-    
+   
             <div class="button">
                 <button class="button-with-image">
                     <img class="login" src="imagens/github png.png" alt="Imagem" class="button-image">
                 </button>
             </div>
         </div>
-
-    <!--final do rodapé-->
+    </footer>
+    <script src="./main.js"></script>
 </body>
 
 </html>
