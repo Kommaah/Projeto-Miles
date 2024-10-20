@@ -11,6 +11,7 @@ body {
     flex-direction: column; /* Permite que o conteúdo do corpo se empilhe verticalmente */
     min-height: 100vh; /* Garante que o corpo ocupe pelo menos a altura total da viewport */
     margin: 0; /* Remove a margem padrão do corpo */
+    cursor: url('../imagens/cursor.png'), auto;
 }
 
 /*----------------------------------------------------------------*/
@@ -97,15 +98,12 @@ body {
 }
 
 /* Estilização do botão de Login */
-.button-container {
+.button-container-top {
     display: flex; /* Usar flexbox para alinhar os botões lado a lado */
-    justify-content: center; /* Centraliza os botões horizontalmente */
-    align-items: center; /* Alinha verticalmente os botões */
+    justify-content: center;
+    align-items: center;
+    gap: 20px; /* Adjust the gap between buttons as needed */
     margin-top: 20px; /* Espaço acima do contêiner de botões */
-}
-
-.button-container div {
-    margin: 0 10px; /* Margem lateral para espaçamento entre os botões */
 }
 
 .sign {
@@ -152,21 +150,16 @@ body {
 /* Estilização do footer */
 footer {
     display: flex;
-    justify-content: center; /* Centraliza o conteúdo do footer */
-    align-items: center; /* Alinha verticalmente */
     position: relative; /* Permite que o footer seja posicionado no final da página */
     bottom: 0; /* Coloca o footer na parte inferior */
     width: 100%; /* Ocupa toda a largura da página */
     margin-top: auto; /* Coloca o footer na parte inferior */
     padding: 20px 0; /* Espaçamento acima e abaixo do footer */
     background-color: #fff; /* Cor de fundo do footer (ajuste conforme necessário) */
-}
-
-/* Centraliza os botões no footer */
-.button-container {
-    display: flex;
-    justify-content: center; /* Centraliza os botões no footer */
-    align-items: center; /* Alinha verticalmente os botões */
+    justify-content: center; /* Centraliza o conteúdo do footer */
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-content: center;
 }
 
 /* Estilização do botão */
@@ -194,4 +187,46 @@ footer {
 .button-with-image:hover {
     transform: scale(1.1) translateY(-5px); /* Aumenta e move o botão ligeiramente para cima */
     background-color: #fc367b; /* Alteração de cor ao passar o mouse */
+}
+
+#additional-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 10px; /* Adjust the gap between buttons as needed */
+    padding: 10px 0; /* Espaçamento interno do contêiner de botões */
+    justify-content: flex-start;
+    margin-left: -101px;
+
+}
+
+#box-one {
+    flex: 1 1 auto;
+}
+
+#box-two {
+    flex: 3 1 auto;
+}
+
+#box-three {
+    flex: 1 1 auto;
+}
+
+.button {
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: center;
+    gap: 10px; 
+}
+
+.button-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 0;
+}
+
+#expand-button
+{
+    position: realtive;
 }
