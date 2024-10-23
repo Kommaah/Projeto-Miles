@@ -32,7 +32,7 @@
                     <!--Botão de Login-->
                     <div class="button-container">
                         <div>
-                            <button class="sign" onclick="toggleMusic()">
+                            <button class="sign">
                                 <img src="imagens/MILES LOGIN.png" alt="Imagem de Login">
                             </button>
                             <p class="login-text">Login</p>
@@ -44,18 +44,18 @@
                             <p class="login-text">Music</p>
                         </div>
                     </div>
-                    
+
                     <!-- Adicionando o elemento de áudio -->
                     <audio id="music">
                         <source src="musica.mp3" type="audio/mpeg">
                         Seu navegador não suporta o elemento de áudio.
                     </audio>
-                    
+
                     <!-- JavaScript para controlar o play/pause -->
                     <script>
                         var music = document.getElementById('music');
                         music.volume = 0.3; // Define o volume para 30% (0.0 a 1.0)
-                    
+
                         function toggleMusic() {
                             if (music.paused) {
                                 music.play(); // Se a música está pausada, toca
@@ -83,7 +83,7 @@
                     <img class="login" src="imagens/linkedin png.png" alt="Imagem" class="button-image">
                 </button>
             </div>
-    
+
             <div class="button">
                 <button class="button-with-image">
                     <img class="login" src="imagens/github png.png" alt="Imagem" class="button-image">
@@ -91,7 +91,7 @@
             </div>
         </div>
 
-    <!--final do rodapé-->
+        <!--final do rodapé-->
 </body>
 
 </html>

@@ -2,106 +2,212 @@
 <html lang="PT-BR">
 
 <head>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home</title>
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="icon" href="imagens/logo miles.png" type="image/png">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Home</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="icon" href="imagens/logo miles.png" type="image/png">
 </head>
 
 <body>
 
-    <!--inicio do Header-->
+  <header>
+    <section>
+      <!--Logo do Header e links de navegação-->
+      <div class="menu">
+        <div class="nav">
+          <a href="#home" class="logo">
+            <img src="imagens/MILES LOGO.png" alt="Logo do Site">
+          </a>
+          <ul>
+            <li><a class="active" href="#home">Home</a></li>
+            <li><a href="#history">History</a></li>
+            <li><a href="#blog">Blog</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
 
-    <header>
-        <section>
-            <!--Logo do Header e links de navegação-->
-            <div class="menu">
-                <div class="nav">
-                    <a href="index.html" class="logo">
-                        <img src="imagens/MILES LOGO.png" alt="Logo do Site">
-                    </a>
-                    <ul>
-                        <li><a class="active" href="index.html">Home</a></li>
-                        <li><a href="historia.html">History</a></li>
-                        <li><a href="blog.html">Blog</a></li>
-                        <li><a href="contato.html">Contact</a></li>
-                    </ul>
+          <!--Botão de Login-->
+          <div class="button-container">
+            <div>
+              <button class="sign">
+                <img src="imagens/MILES LOGIN.png" alt="Imagem de Login">
+              </button>
+              <p class="login-text">Theme</p>
+            </div>
+            <div>
+              <button class="sign" onclick="toggleMusic()">
+                <img src="imagens/FONE MILES PNG.png" alt="Imagem de Música">
+              </button>
+              <p class="login-text">Music</p>
+            </div>
+          </div>
 
+          <!-- Adicionando o elemento de áudio -->
+          <audio id="music">
+            <source src="musica.mp3" type="audio/mpeg">
+            Seu navegador não suporta o elemento de áudio.
+          </audio>
 
-                    <!--Botão de Login-->
-                    <div class="button-container-top">
-                        <div>
-                            <button class="sign" onclick="toggleMusic()">
-                                <img src="imagens/MILES LOGIN.png" alt="Imagem de Login">
-                            </button>
-                            <p class="login-text">Login</p>
-                        </div>
-                        <div>
-                            <button class="sign" onclick="toggleMusic()">
-                                <img src="imagens/FONE MILES PNG.png" alt="Imagem de Música">
-                            </button>
-                            <p class="login-text">Music</p>
-                        </div>
-                    </div>
-                    
-                    <!-- Adicionando o elemento de áudio -->
-                    <audio id="music">
-                        <source src="musica.mp3" type="audio/mpeg">
-                        Seu navegador não suporta o elemento de áudio.
-                    </audio>
-                    
-                    <!-- JavaScript para controlar o play/pause -->
-                    <script>
-                        var music = document.getElementById('music');
-                        music.volume = 0.3; // Define o volume para 30% (0.0 a 1.0)
-                    
-                        function toggleMusic() {
-                            if (music.paused) {
-                                music.play(); // Se a música está pausada, toca
-                            } else {
-                                music.pause(); // Se a música está tocando, pausa
-                            }
-                        }
-                    </script>
+          <!-- JavaScript para controlar o play/pause -->
+          <script>
+            var music = document.getElementById('music');
+            music.volume = 0.1;
 
-    </header>
+            function toggleMusic() {
+              if (music.paused) {
+                music.play();
+              } else {
+                music.pause();
+              }
+            }
+          </script>
+        </div>
+      </div>
+    </section>
+  </header>
 
-    <!--final do Header-->
+  <!-- Meio do site -->
+  <main>
 
-    <!--meio do site-->
-    <main>
+    <!-- Seção Home -->
+    <section id="home">
+      <div class="title-container">
+        <h1 class="main-title">Home</h1>
+      </div>
+      <div class="carousel-wrapper">
+        <!-- Primeiro carrossel -->
+        <div class="carousel-container carousel-1">
+          <div class="carousel">
+            <div class="slide">
+              <img src="imagens/Foto 1 Miles.jpeg" alt="Slide 1">
+            </div>
+            <div class="slide">
+              <img src="imagens/Foto 2 miles.jpeg" alt="Slide 2">
+            </div>
+            <div class="slide">
+              <img src="imagens/Foto 3 miles.jpeg" alt="Slide 3">
+            </div>
+          </div>
+          <div class="carousel-description">
+            <p>Texto explicativo sobre as imagens do primeiro carrossel.</p>
+          </div>
+        </div>
 
-    </main>
-    <!--final do meio do site-->
+        <!-- Segundo carrossel -->
+        <div class="carousel-container carousel-2">
+          <div class="carousel">
+            <div class="slide">
+              <img src="imagens/foto 1 miles 2.jpeg" alt="Slide 1">
+            </div>
+            <div class="slide">
+              <img src="imagens/Foto 2 miles 2.jpeg" alt="Slide 2">
+            </div>
+            <div class="slide">
+              <img src="imagens/Foto 3 miles 2.jpeg" alt="Slide 3">
+            </div>
+          </div>
+          <div class="carousel-description">
+            <p>Texto explicativo sobre as imagens do segundo carrossel.</p>
+          </div>
+        </div>
 
-    <!--inicio do rodapé-->
-    <footer>
-        <div id="additional-buttons" style="display: none;">
-            <button class="button-with-image" id="box-one"> 
-                <img class="login" src="imagens/linkedin png.png" alt="Perfil 1" class="button-image">
-            </button>
-            <button class="button-with-image" id="box-two">
-                <img class="login" src="imagens/linkedin png.png" alt="Perfil 2" class="button-image">
-            </button>
-            <button class="button-with-image" id="box-three">
-                <img class="login" src="imagens/linkedin png.png" alt="Perfil 3" class="button-image">
+        <!-- Terceiro carrossel -->
+        <div class="carousel-container carousel-3">
+          <div class="carousel">
+            <div class="slide">
+              <img src="imagens/Foto 1 Miles 3.jpeg" alt="Slide 1">
+            </div>
+            <div class="slide">
+              <img src="imagens/Foto 2 miles 3.jpeg" alt="Slide 2">
+            </div>
+            <div class="slide">
+              <img src="imagens/Foto 3 miles 3.jpeg" alt="Slide 3">
+            </div>
+          </div>
+          <div class="carousel-description">
+            <p>Texto explicativo sobre as imagens do terceiro carrossel.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <script>
+      function initCarousel(carouselClass) {
+        let currentIndex = 0;
+        const carousel = document.querySelector(`.${carouselClass} .carousel`);
+        const slides = carousel.querySelectorAll('.slide');
+        const totalSlides = slides.length;
+
+        function showNextSlide() {
+          currentIndex = (currentIndex + 1) % totalSlides;
+          const offset = -currentIndex * 100; // Mover 100% para cada slide
+          carousel.style.transform = `translateX(${offset}%)`;
+        }
+
+        // Muda o slide a cada 5 segundos
+        setInterval(showNextSlide, 5000);
+      }
+
+      // Inicializa cada carrossel separadamente
+      initCarousel('carousel-1');
+      initCarousel('carousel-2');
+      initCarousel('carousel-3');
+    </script>
+
+    <!-- Seção History -->
+    <section id="history">
+      <div class="title-container">
+        <h1 class="main-title">History</h1>
+      </div>
+      <!-- Conteúdo da seção History -->
+    </section>
+
+    <!-- Seção Blog -->
+    <section id="blog">
+      <div class="title-container">
+        <h1 class="main-title">Blog</h1>
+      </div>
+      <!-- Conteúdo da seção Blog -->
+    </section>
+
+    <!-- Seção Contact -->
+    <section id="contact">
+      <div class="title-container">
+        <h1 class="main-title">Contact</h1>
+      </div>
+      <!-- Conteúdo da seção Contact -->
+    </section>
+
+  </main>
+
+  <!-- Rodapé -->
+  <footer>
+    <div id="additional-buttons" style="display: none;">
+        <button class="button-with-image" id="box-one"> 
+            <img class="login" src="imagens/linkedin png.png" alt="Perfil 1" class="button-image">
+        </button>
+        <button class="button-with-image" id="box-two">
+            <img class="login" src="imagens/linkedin png.png" alt="Perfil 2" class="button-image">
+        </button>
+        <button class="button-with-image" id="box-three">
+            <img class="login" src="imagens/linkedin png.png" alt="Perfil 3" class="button-image">
+        </button>
+    </div>
+    <div class="button-container">
+        <div class="button">
+            <button id="expand-button" class="button-with-image">
+                <img class="login" src="imagens/linkedin png.png" alt="Linkedin" class="button-image">
             </button>
         </div>
-        <div class="button-container">
-            <div class="button">
-                <button id="expand-button" class="button-with-image">
-                    <img class="login" src="imagens/linkedin png.png" alt="Linkedin" class="button-image">
-                </button>
-            </div>
-   
-            <div class="button">
-                <button class="button-with-image">
-                    <img class="login" src="imagens/github png.png" alt="Imagem" class="button-image">
-                </button>
-            </div>
+
+        <div class="button">
+            <button class="button-with-image">
+                <img class="login" src="imagens/github png.png" alt="Imagem" class="button-image">
+            </button>
         </div>
-    </footer>
-    <script src="./main.js"></script>
+    </div>
+</footer>
+<script src="./main.js"></script>
+
 </body>
 
 </html>
